@@ -1,0 +1,5 @@
+#AddHandler fcgid-script .php .phtml .html .htm
+#FCGIWrapper /var/www/mixmir/data/php-bin/php .php
+#FCGIWrapper /var/www/mixmir/data/php-bin/php .phtml
+#FCGIWrapper /var/www/mixmir/data/php-bin/php .html
+#FCGIWrapper /var/www/mixmir/data/php-bin/php .htm

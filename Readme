@@ -1,0 +1,35 @@
+#######Настройка хоста########
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName yt
+        DocumentRoot /var/www/yt/frontend
+
+        Alias /api /var/www/yt/backend/web
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride All
+        </Directory>
+
+        <Directory /var/www/yt/frontend/>
+                Options Indexes FollowSymLinks MultiViews
+
+                AllowOverride All
+
+                # For Apache 2.4
+                # Require all granted
+
+                # For Apache 2.2
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
